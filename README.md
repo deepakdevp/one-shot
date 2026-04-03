@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="assets/logo.svg" alt="Product Blueprint" width="120" height="120" />
+  <img src="assets/logo.svg" alt="One-Shot" width="120" height="120" />
 </p>
 
-<h1 align="center">Product Blueprint</h1>
+<h1 align="center">One-Shot</h1>
 
 <p align="center">
   <strong>One prompt. One idea. One fully-built product.</strong>
@@ -31,7 +31,7 @@
 
 ---
 
-## What Is This?
+## What Is One-Shot?
 
 A **3,000-line battle plan** that turns Claude Code into a full product team. You provide an idea, it does everything else:
 
