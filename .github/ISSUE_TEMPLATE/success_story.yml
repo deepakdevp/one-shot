@@ -1,0 +1,45 @@
+name: Success Story
+description: Built something with the blueprint? Share it!
+title: "[Built] "
+labels: ["success-story"]
+body:
+  - type: input
+    id: product-name
+    attributes:
+      label: Product name
+    validations:
+      required: true
+  - type: input
+    id: product-url
+    attributes:
+      label: Product URL (if live)
+  - type: dropdown
+    id: product-type
+    attributes:
+      label: Product type
+      options:
+        - SaaS
+        - Tool/Utility
+        - API Product
+        - Browser Extension
+        - Marketplace
+        - Mobile App
+        - CLI Tool
+        - Open Source
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: experience
+    attributes:
+      label: How was your experience? What worked, what didn't?
+    validations:
+      required: true
+  - type: input
+    id: time
+    attributes:
+      label: How long did the full build take?
+  - type: input
+    id: viability-score
+    attributes:
+      label: What was your Viability Gate score?

@@ -1,0 +1,30 @@
+name: Feature Request
+description: Suggest an improvement to the blueprint
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - New product type adaptation
+        - New country compliance
+        - New payment gateway
+        - New skill recommendation
+        - New MCP tool
+        - Phase improvement
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the improvement
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Which phase(s) would this affect?
