@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Rounded square background -->
+  <rect x="4" y="4" width="112" height="112" rx="24" ry="24" fill="url(#grad1)" />
+  <!-- Blueprint grid lines -->
+  <line x1="20" y1="30" x2="100" y2="30" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+  <line x1="20" y1="50" x2="100" y2="50" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+  <line x1="20" y1="70" x2="100" y2="70" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+  <line x1="20" y1="90" x2="100" y2="90" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+  <line x1="35" y1="20" x2="35" y2="100" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+  <line x1="60" y1="20" x2="60" y2="100" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+  <line x1="85" y1="20" x2="85" y2="100" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+  <!-- Rocket body -->
+  <path d="M60 22 C60 22 45 45 45 65 C45 78 51 85 60 88 C69 85 75 78 75 65 C75 45 60 22 60 22Z" fill="white" />
+  <!-- Rocket window -->
+  <circle cx="60" cy="55" r="8" fill="url(#grad1)" />
+  <circle cx="60" cy="55" r="5" fill="url(#grad2)" />
+  <!-- Rocket fins -->
+  <path d="M45 72 L32 85 L45 80Z" fill="rgba(255,255,255,0.9)" />
+  <path d="M75 72 L88 85 L75 80Z" fill="rgba(255,255,255,0.9)" />
+  <!-- Rocket flame -->
+  <path d="M53 88 Q56 96 60 102 Q64 96 67 88" fill="url(#grad2)" />
+  <path d="M56 88 Q58 94 60 98 Q62 94 64 88" fill="#fbbf24" />
+  <!-- Checklist marks (floating) -->
+  <g transform="translate(22, 34)" opacity="0.9">
+    <rect width="10" height="10" rx="2" fill="rgba(255,255,255,0.3)" />
+    <path d="M2 5 L4 7.5 L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <g transform="translate(88, 40)" opacity="0.9">
+    <rect width="10" height="10" rx="2" fill="rgba(255,255,255,0.3)" />
+    <path d="M2 5 L4 7.5 L8 3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <g transform="translate(25, 78)" opacity="0.7">
+    <rect width="8" height="8" rx="2" fill="rgba(255,255,255,0.25)" />
+    <path d="M1.5 4 L3 5.5 L6.5 2.5" stroke="white" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>
