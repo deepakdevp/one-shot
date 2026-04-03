@@ -55,7 +55,7 @@ Works for **any product type** — not just SaaS:
 ### 1. Install (one time, 5 minutes)
 
 ```bash
-git clone https://github.com/deepakdevp/product-blueprint.git
+git clone https://github.com/deepakdevp/one-shot.git
 cd product-blueprint
 bash setup.sh
 ```
