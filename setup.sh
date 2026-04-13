@@ -69,4 +69,4 @@ echo ""
 echo "  2. To start a new SaaS project:"
 echo "     mkdir ~/projects/my-saas && cd ~/projects/my-saas"
 echo "     claude --dangerously-skip-permissions"
-echo '     Paste: "Read ~/docs/SAAS-ONE-SHOT-PLAN.md and execute it for this idea: [YOUR IDEA]"'
+echo '     Paste: "Read ~/projects/one-shot/BLUEPRINT.md and execute it for this idea: [YOUR IDEA]"'
