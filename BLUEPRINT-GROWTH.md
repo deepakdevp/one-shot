@@ -198,6 +198,158 @@ Public release:
 - Launch day campaigns (L1-L3)
 ```
 
+### L5. Optional Brand Kit Assets (channel-conditional)
+
+> The blueprint's Phase 8H produces 15 mandatory brand kit items every
+> product needs. These additional items are channel-specific — produce
+> them only when you actually use the channel. Skipping them at launch
+> is fine; come back when the channel is part of your strategy.
+
+#### When you start posting on Instagram
+
+```
+[ ] story-template-quote.png       (1080x1920)
+[ ] story-template-feature.png     (1080x1920)
+[ ] story-template-poll.png        (1080x1920)
+[ ] reel-cover-template.png        (1080x1920)
+[ ] highlight-cover-icons/         (8-12 icons, brand colors)
+
+Tools: Canva AI, Adobe Express, Mavic AI
+Time: ~2 hours via Canva remix from Phase 8H.6 templates
+```
+
+#### When you start posting on YouTube
+
+```
+[ ] youtube-thumbnail-template.png (1280x720, brand colors + face frame)
+[ ] youtube-end-screen.png         (1920x1080)
+[ ] youtube-intro-card.png         (1920x1080)
+[ ] channel-banner.png             (2560x1440 — already in Phase 8H.5 if YouTube was checked)
+[ ] thumbnail-variations/          (5-10 layouts to A/B test)
+
+Tools: Canva AI, Snappa, Placeit
+Time: ~3 hours initial setup, then 15 min per video
+```
+
+#### When you start a podcast
+
+```
+[ ] podcast-cover-art.png          (3000x3000, Apple/Spotify compliant)
+[ ] podcast-episode-template.png   (square cover with episode title overlay)
+[ ] audiogram-template.mp4         (waveform + branded background)
+[ ] show-notes-template.md         (consistent format)
+
+Tools: Canva AI, Headliner (audiograms), Adobe Express
+Time: ~4 hours for full setup
+```
+
+#### When you launch content marketing with gated content
+
+```
+[ ] lead-magnet-cover-template.png (eBook cover, A4 portrait)
+[ ] whitepaper-cover-template.png  (A4 portrait, more formal)
+[ ] checklist-cover-template.png
+[ ] template-pack-cover.png
+[ ] landing-page-graphic-template.png (lead magnet preview hero)
+
+Tools: Canva AI, Visme, Designrr
+Time: ~3 hours for template set
+```
+
+#### When you create data-driven content
+
+```
+[ ] infographic-template-vertical.png   (Pinterest-friendly, 1000x3000)
+[ ] infographic-template-horizontal.png (LinkedIn-friendly, 1200x675)
+[ ] data-viz-style-guide.md             (chart colors, fonts, gridlines)
+[ ] case-study-template.md              (problem → solution → result)
+
+Tools: Canva, Visme, Piktochart, Venngage, Datawrapper
+Time: ~4 hours for templates + style guide
+```
+
+#### When you go live (streams, webinars, events)
+
+```
+[ ] webcam-frame-overlay.png       (rounded with logo + name)
+[ ] lower-third-template.png       (speaker name + title bar)
+[ ] livestream-alert-graphics/     (follower, subscriber, donation)
+[ ] livestream-ticker-template.png
+[ ] webinar-slide-template.pptx    (16:9 with brand)
+[ ] event-banner-roll-up.pdf       (33"x80" for physical events)
+[ ] event-booth-backdrop.pdf       (8'x10' for booths)
+
+Tools: StreamYard, OBS, Canva, Adobe Express, Visme
+Time: ~5 hours for full streaming kit
+```
+
+#### When you ship merch / physical products
+
+```
+[ ] business-card-template.pdf     (front + back)
+[ ] letterhead-template.docx       (A4 + Letter)
+[ ] envelope-template.pdf          (DL + #10)
+[ ] sticker-designs.svg            (die-cut shapes)
+[ ] tshirt-mockup.png              (placeholder — print on Printful/Printify)
+[ ] mug-mockup.png
+[ ] notebook-mockup.png
+[ ] hoodie-mockup.png
+[ ] tote-bag-mockup.png
+
+Tools: Looka, MOO, Sticker Mule Studio, Placeit, Printful Mockup Generator
+Time: ~6 hours for full merch set + setup with print-on-demand
+```
+
+#### When you sign your first partnership
+
+```
+[ ] co-branding-guidelines.md      (logo lockup rules with partner logos)
+[ ] partnership-deck-template.pptx (audience stats, packages, testimonials)
+[ ] sponsorship-tier-graphics/     (Bronze/Silver/Gold tier visuals)
+[ ] partner-onboarding-kit/        (logo pack, brand do's/don'ts)
+
+Tools: Notion AI, Google Slides + AI, Canva, Gamma
+Time: ~3 hours for templates
+```
+
+#### When you handle image-heavy content
+
+```
+[ ] watermark-design.svg           (semi-transparent logo overlay)
+[ ] watermark-script.ts            (auto-apply to uploaded images)
+
+Tools: Canva, Photoshop, GIMP, sharp (Node.js)
+Time: ~2 hours including automation
+```
+
+#### When your component library matures (3+ months post-launch)
+
+```
+[ ] Storybook setup with all components
+[ ] Storybook deployed to /storybook subdomain
+[ ] Component usage examples
+[ ] Visual regression tests via Chromatic
+
+Tools: Storybook, Chromatic, shadcn/ui (already in stack)
+Time: ~2 days for initial setup
+```
+
+### L6. Brand Kit Maintenance
+
+```
+Quarterly review:
+- Are all brand assets still used? Remove unused.
+- Has the brand evolved? Update brand-bible.md and regenerate dependent assets.
+- Are colors still passing WCAG? Re-run contrast-report.md.
+- Is the press kit current? Update fact-sheet.md with latest stats.
+- Are screenshots stale? Regenerate via 8E pipeline.
+
+Annual:
+- Review brand-guidelines.pdf with the team
+- Ship a "brand v2.0" if the company has materially evolved
+- Archive deprecated assets to /public/brand/archive/
+```
+
 ---
 
 ## Section A — Activation
