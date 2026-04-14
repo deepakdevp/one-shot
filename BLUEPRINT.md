@@ -139,20 +139,46 @@ Strategy
 [ ] COMPLIANCE-STRATEGY.md [ ] PRD.md                 [ ] BUSINESS-MODEL.md
 [ ] ARCHITECTURE.md
 
-Theme (non-negotiable)
-[ ] brand-bible.md         [ ] brand-tokens.css       [ ] tailwind.config.brand.js
+Theme (non-negotiable — Phase 7)
+[ ] brand-bible.md         (incl. tagline variations, logo usage, content style guide)
+[ ] brand-tokens.css       (incl. gradients, monospace, full type scale)
+[ ] tailwind.config.brand.js
 [ ] design-tokens.json
 
 Design
 [ ] DESIGN.md              [ ] SITE.md                [ ] Stitch project (all MVP screens)
 
-Assets (non-negotiable — before deploy)
-[ ] logo.svg (+ light/dark + mark-only)
-[ ] favicon.ico + apple-touch-icon
-[ ] og-image.png (1200×630)       [ ] twitter-card.png
-[ ] app-screenshots/ (desktop + mobile, all key screens)
-[ ] demo-video.mp4 (~60s walkthrough via /remotion)
-[ ] social-card-set/ (PH, HN, LinkedIn, X)
+Assets (non-negotiable — Phase 8, verified by 11.5 audit)
+Logo & lockups (8B)
+[ ] logo set: full / dark / light / mark / monochrome
+[ ] lockups: horizontal / stacked / mark-only / wordmark-only
+Favicons (8C)
+[ ] favicon.ico + 16/32 + apple-touch + android-192/512 + manifest.webmanifest
+Social cards (8D)
+[ ] og-image.png (1200×630) + twitter-card + linkedin-share
+Screenshots + mockups (8E + 8H.9)
+[ ] app screenshots (desktop + mobile, all key screens)
+[ ] device mockups (laptop + iPhone + browser frames)
+Video (8F + 8H.8)
+[ ] demo-video.mp4 (~60s)
+[ ] animated logo reveal (Lottie + MP4)
+README + diagrams (8G)
+[ ] README banner + architecture diagram
+Brand kit extras (8H — mandatory)
+[ ] UI icon set + icon-system.md
+[ ] illustrations: hero + 4 empty states + 3 errors + 3 onboarding
+[ ] app icon master set (iOS + Android + PWA)
+[ ] pricing graphics (3 tier cards + comparison + badges)
+[ ] social profiles + covers (X, LinkedIn, IG, GitHub, YouTube)
+[ ] social post templates (3 baseline)
+[ ] newsletter template
+[ ] pitch deck (PDF + PPTX, 12 slides)
+[ ] one-pager (PDF + PNG)
+[ ] press kit (logo-pack.zip + boilerplate + fact sheet)
+[ ] /press public download page in app
+[ ] WCAG contrast report (zero failures)
+[ ] brand-guidelines.pdf (compiled from brand-bible.md)
+[ ] /public/brand/assets-manifest.json (audited at 11.5)
 
 Code
 [ ] Working Next.js app with all Phase-10 features

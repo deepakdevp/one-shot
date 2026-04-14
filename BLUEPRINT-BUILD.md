@@ -1207,12 +1207,29 @@ DESIGNER audit
 ├── /design-inclusive-visuals-specialist — WCAG AA contrast, 44x44 touch targets,
 │   keyboard nav, screen reader labels, no color-only info
 ├── /design-whimsy-injector — 3-5 moments of delight (loading, empty, 404)
-├── VERIFY all Phase 8 assets exist:
-│   [ ] logo set (5 variants)
-│   [ ] favicon set (7 files + manifest)
-│   [ ] OG + social cards
-│   [ ] app screenshots (desktop + mobile)
-│   [ ] demo video
+├── VERIFY all Phase 8 assets exist (grep /public/brand/assets-manifest.json):
+│   [ ] 8B  logo set (5 variants) + lockups (4 variants)
+│   [ ] 8C  favicon set (7 files + manifest.webmanifest)
+│   [ ] 8D  OG + social cards (1200x630, 1200x675, 1200x627)
+│   [ ] 8E  app screenshots (desktop + mobile, all key flows)
+│   [ ] 8F  demo-video.mp4 (~60s)
+│   [ ] 8G  README banner + architecture diagram
+│   [ ] 8H.1  UI icon set + icon-system.md
+│   [ ] 8H.2  illustrations: hero + 4 empty states + 3 errors + 3 onboarding
+│   [ ] 8H.3  app icon master set (iOS + Android + PWA folders)
+│   [ ] 8H.4  pricing graphics (3 tier cards + comparison + badges)
+│   [ ] 8H.5  social profiles + covers (X, LinkedIn, IG, GitHub, YouTube)
+│   [ ] 8H.6  social post templates (3 baseline)
+│   [ ] 8H.7  newsletter template (HTML preview + React Email component)
+│   [ ] 8H.8  animated logo reveal (logo-reveal.json + .mp4)
+│   [ ] 8H.9  device mockups (laptop + iPhone + browser frames)
+│   [ ] 8H.10 pitch-deck (PDF + PPTX, 12 slides)
+│   [ ] 8H.11 one-pager (PDF + PNG)
+│   [ ] 8H.12 press kit (logo-pack.zip + boilerplate.md + fact-sheet.md)
+│   [ ] 8H.13 /press page live in app
+│   [ ] 8H.14 contrast-report.md with zero failures
+│   [ ] 8H.15 brand-guidelines.pdf
+│   ANY missing → block deploy, route back to designer agent
 └── /design-visual-storyteller — landing page tells a story
 
 FRONTEND audit
