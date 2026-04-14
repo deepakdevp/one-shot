@@ -461,17 +461,40 @@ Run all 6 brand-architect phases end-to-end:
 | 1. Brand Brief | Compiled from Q13-17 |
 | 2. Brand Strategy | Purpose, vision, mission, values, positioning |
 | 3. Visual Direction | Pick best of 3 directions using user prefs |
-| 4. Full Brand Bible | Colors, typography, spacing, shadows, border-radius, voice |
-| 5. Code Artifacts | **brand-tokens.css** (light + dark), **tailwind.config.brand.js**, **design-tokens.json** (W3C) |
+| 4. Full Brand Bible | Colors (incl. gradients), typography (heading + body + mono), type scale, spacing, shadows, border-radius, voice, logo usage rules, content style guide, tagline variations |
+| 5. Code Artifacts | **brand-tokens.css** (light + dark + gradients + type scale), **tailwind.config.brand.js**, **design-tokens.json** (W3C) |
 | 6. Pipeline Handoff | Save files, prepare for Phase 8 |
 
 ### Mandatory Outputs (verify all exist before Phase 8)
 
 ```
 [ ] brand-bible.md            — strategy + visual + voice spec
-[ ] brand-tokens.css          — CSS custom props, light + dark modes
-[ ] tailwind.config.brand.js  — Tailwind theme extension
-[ ] design-tokens.json        — W3C format (portable)
+    Required sections:
+    - Brand strategy (purpose, vision, mission, values, positioning)
+    - Visual direction (chosen direction with rationale)
+    - Color system (primary, secondary, neutrals, semantic, gradients)
+    - Typography (heading font, body font, monospace, type scale H1–H6 + body + caption)
+    - Spacing scale, shadows, border-radius
+    - Voice & tone (3 adjectives, do/don't examples)
+    - Tagline variations (primary + 3-5 campaign variants)
+    - Logo usage rules (clear space, min size, do's and don'ts)
+    - Content style guide (capitalization, product names, banned words, grammar)
+
+[ ] brand-tokens.css          — CSS custom props
+    Required tokens:
+    - Light mode: --color-bg, --color-fg, --color-primary, --color-accent,
+      --color-muted, --color-border, semantic (success, warning, error, info)
+    - Dark mode: same set under [data-theme="dark"]
+    - Neutrals: --gray-50 through --gray-950
+    - Gradients: --gradient-primary, --gradient-accent, --gradient-hero (named)
+    - Type scale: --text-xs through --text-6xl
+    - Font families: --font-sans, --font-display, --font-mono
+    - Spacing: --space-0 through --space-32
+    - Radius: --radius-sm through --radius-full
+    - Shadows: --shadow-sm through --shadow-2xl
+
+[ ] tailwind.config.brand.js  — Tailwind theme extension matching brand-tokens.css
+[ ] design-tokens.json        — W3C format (portable to Style Dictionary, Figma)
 ```
 
 ### Feed brand into design tools
