@@ -552,19 +552,25 @@ If `brand-architect` skill unavailable: use `/frontend-design` + manually create
 
 **Verify visually** via Browserbase screenshot of live Stitch previews.
 
-### 8B — Logo + Brand Mark
+### 8B — Logo + Brand Mark + Lockups
 
 ```
 1. Use /design-image-prompt-engineer to craft logo prompts from brand-bible
 2. Generate via Nano Banana Pro (Gemini) OR 21st.dev Magic logo_search
-3. Produce:
+3. Produce primary logo set:
    [ ] logo.svg              — primary full logo
    [ ] logo-dark.svg         — for dark backgrounds
    [ ] logo-light.svg        — for light backgrounds
    [ ] logo-mark.svg         — icon-only (favicon base)
    [ ] logo-monochrome.svg   — single-color for print/watermarks
-4. Validate contrast vs brand background (WCAG AA)
-5. Save under /public/brand/
+4. Produce lockup variations (logo + tagline combinations):
+   [ ] lockup-horizontal.svg     — mark + wordmark + tagline (single line)
+   [ ] lockup-stacked.svg        — mark on top, wordmark + tagline below
+   [ ] lockup-mark-only.svg      — mark + tagline (small spaces)
+   [ ] lockup-wordmark-only.svg  — wordmark + tagline (no mark)
+5. Validate contrast vs brand background (WCAG AA) — record in
+   /public/brand/contrast-report.md
+6. Save all under /public/brand/
 ```
 
 ### 8C — Favicon Set
@@ -636,17 +642,323 @@ Use /remotion skill:
 [ ] architecture-diagram.svg  (generated via Figma MCP generate_diagram)
 ```
 
+### 8H — Brand Kit Extras (mandatory before deploy)
+
+> These 15 items separate "real product" from "AI-generated MVP". Phase 11.5
+> audit verifies every one. Source the asset list from
+> `assets-manifest.json` so the audit can grep against it.
+
+#### 8H.1 — UI Icon Set
+
+```
+1. Default: lucide-react (consistent stroke, 24px grid)
+   npm i lucide-react
+2. Document chosen icons in /public/brand/icon-system.md
+   - Navigation icons (home, settings, user, etc.)
+   - Action icons (add, edit, delete, search, filter)
+   - Status icons (success, warning, error, info, loading)
+   - Stroke weight, size grid, color rules
+3. If brand needs custom icons: generate via Recraft AI / Iconify
+   - Save to /public/brand/icons/*.svg
+   - One file per icon, named lowercase-kebab.svg
+```
+
+#### 8H.2 — Custom Brand Illustrations
+
+```
+1. Use /design-image-prompt-engineer + Nano Banana Pro / Midjourney / DALL-E 3
+2. Generate brand-consistent illustrations:
+   [ ] hero-illustration.svg       — landing page hero (or PNG if raster)
+   [ ] empty-state-projects.svg    — "no projects yet"
+   [ ] empty-state-search.svg      — "no results"
+   [ ] empty-state-notifications.svg
+   [ ] empty-state-data.svg        — "no data to show"
+   [ ] error-404.svg               — page not found art
+   [ ] error-500.svg               — server error art
+   [ ] error-403.svg               — forbidden art
+   [ ] onboarding-step-1.svg
+   [ ] onboarding-step-2.svg
+   [ ] onboarding-step-3.svg
+3. Style guide: document line weight, color palette, flat vs 3D in
+   /public/brand/illustration-style.md
+4. Save under /public/brand/illustrations/
+```
+
+#### 8H.3 — App Icon Master Set
+
+```
+Distinct from favicon (8C). Required for PWA + future native apps.
+1. Source from logo-mark.svg
+2. Produce:
+   [ ] app-icon-1024.png         — master, square, no transparency
+   [ ] app-icon-ios/ folder      — all required iOS sizes (180, 167, 152, 120, ...)
+   [ ] app-icon-android/ folder  — adaptive icon (foreground + background)
+   [ ] app-icon-pwa-192.png      — PWA install prompt
+   [ ] app-icon-pwa-512.png      — PWA splash
+3. Use Icon Kitchen (https://icon.kitchen) or makeappicon.com
+4. Save under /public/brand/app-icons/
+```
+
+#### 8H.4 — Pricing Page Graphics
+
+```
+1. Tier cards (3 tiers minimum):
+   [ ] pricing-card-starter.png    — visual treatment for Starter tier
+   [ ] pricing-card-pro.png        — recommended tier (highlighted)
+   [ ] pricing-card-enterprise.png — Contact Sales tier
+2. Comparison matrix layout (Figma file or React component spec):
+   [ ] pricing-comparison-table.md — feature × tier matrix
+3. CTAs and badges:
+   [ ] badge-most-popular.svg
+   [ ] badge-best-value.svg
+4. Save under /public/marketing/pricing/
+```
+
+#### 8H.5 — Social Profile Pics + Cover Photos
+
+```
+For X, LinkedIn, Instagram, GitHub, YouTube (default — others optional):
+[ ] social-profile-x.png        (400x400)
+[ ] social-cover-x.png          (1500x500)
+[ ] social-profile-linkedin.png (400x400)
+[ ] social-cover-linkedin-personal.png (1584x396)
+[ ] social-cover-linkedin-page.png     (1128x191)
+[ ] social-profile-instagram.png       (320x320)
+[ ] social-profile-github.png   (500x500)
+[ ] social-cover-youtube.png    (2560x1440 — safe area 1546x423)
+
+All use brand-tokens.css colors + logo + tagline.
+Save under /public/marketing/social/profiles/
+```
+
+#### 8H.6 — Social Post Templates (3 baseline)
+
+```
+Use Canva MCP (generate-design) with brand kit:
+[ ] post-template-quote.png     (1080x1080 — quote on brand bg)
+[ ] post-template-feature.png   (1080x1080 — feature highlight)
+[ ] post-template-launch.png    (1080x1080 — launch announcement)
+[ ] post-template-quote.fig     — editable Figma file (optional)
+
+Each template should be remixable via Canva for ongoing posts.
+Save under /public/marketing/social/templates/
+```
+
+#### 8H.7 — Newsletter Template (marketing, not transactional)
+
+```
+Distinct from transactional email templates (Phase 10).
+1. Use React Email + Resend with brand-tokens.css colors
+2. Components:
+   - Branded header with logo + nav
+   - Hero block (image + title + subtitle)
+   - Content block (paragraph + image)
+   - CTA block (branded button)
+   - Footer (unsubscribe, social links, address)
+3. File: src/components/emails/newsletter-template.tsx
+4. Preview HTML: /public/marketing/newsletter-preview.html
+```
+
+#### 8H.8 — Animated Logo Reveal (Lottie)
+
+```
+1. Animate logo-mark.svg in After Effects + Bodymovin OR Rive
+2. Or use LottieFiles "Logo Animation" templates as base, swap colors
+3. Export:
+   [ ] logo-reveal.json     — Lottie JSON for web (use airbnb/lottie-web)
+   [ ] logo-reveal.mp4      — fallback video for social
+4. Duration: 1.5–2.5 seconds
+5. Save under /public/brand/animations/
+6. Wire into app loading screen + demo video intro
+```
+
+#### 8H.9 — Screenshot Device Mockups
+
+```
+After 8E (raw screenshots), wrap them in device frames:
+1. Use Shotsnapp / MockupGen / Recraft AI Mockups
+2. Produce:
+   [ ] mockup-laptop-landing.png       (MacBook frame)
+   [ ] mockup-laptop-dashboard.png
+   [ ] mockup-iphone-landing.png       (iPhone 15 frame)
+   [ ] mockup-iphone-dashboard.png
+   [ ] mockup-browser-landing.png      (Chrome browser frame)
+3. Use these in landing page hero, Product Hunt gallery, ads
+4. Save under /public/marketing/mockups/
+```
+
+#### 8H.10 — Pitch Deck Template
+
+```
+Use Gamma AI OR Canva Presentations with brand kit:
+1. 12-slide template:
+   1. Cover (logo + tagline + product name)
+   2. Problem
+   3. Solution
+   4. Demo / Product
+   5. Market size
+   6. Business model
+   7. Traction
+   8. Competition
+   9. Team
+   10. Roadmap
+   11. Ask (funding / hiring / partnership)
+   12. Contact
+2. Export:
+   [ ] pitch-deck.pdf
+   [ ] pitch-deck.pptx        (editable)
+3. Save under /public/marketing/pitch-deck/
+```
+
+#### 8H.11 — One-Pager / Sell Sheet
+
+```
+Single-page product overview for sales conversations and PR:
+1. Sections (top to bottom):
+   - Logo + tagline
+   - One-line value prop
+   - Problem statement (1 sentence)
+   - Solution (3 bullets)
+   - Key features (3-5 with icons)
+   - Pricing summary
+   - Customer logos / social proof
+   - Contact + URL
+2. Design via Figma / Canva using brand kit
+3. Export:
+   [ ] one-pager.pdf            — A4 portrait
+   [ ] one-pager.png            — for email/social embed
+4. Save under /public/marketing/one-pager/
+```
+
+#### 8H.12 — Media Kit / Press Kit
+
+```
+Public-facing kit for press, partners, and influencers.
+Folder: /public/press/
+
+[ ] /press/logo-pack.zip       — all logo variants (svg + png)
+[ ] /press/screenshots.zip     — all app screenshots + mockups
+[ ] /press/founder-photos/     — placeholder (real photos uploaded by user)
+[ ] /press/boilerplate.md      — 50-word, 100-word, 200-word company descriptions
+[ ] /press/fact-sheet.md       — founding date, location, team size, funding,
+                                 customer count, press mentions
+[ ] /press/contact.md          — press@yourdomain.com + founder LinkedIn
+```
+
+#### 8H.13 — Brand Asset Download Page
+
+```
+Public-facing /press route in the Next.js app:
+1. Create src/app/(marketing)/press/page.tsx
+2. Sections:
+   - Hero: "Brand assets and press kit"
+   - Logo gallery (download SVG + PNG for each variant)
+   - Color palette (with HEX codes, click to copy)
+   - Typography (font names + download links if self-hosted)
+   - Screenshots gallery
+   - Press kit download (one big ZIP)
+   - Brand guidelines link (PDF from 8H.15)
+   - Contact info
+3. Generate ZIP at build time:
+   - scripts/build-press-kit.ts bundles /public/press/*
+4. Add to footer nav
+```
+
+#### 8H.14 — WCAG Contrast Report
+
+```
+1. Generate /public/brand/contrast-report.md listing every text/bg combo:
+   - Text color × background color
+   - Contrast ratio (calculated)
+   - WCAG AA pass/fail (4.5:1 normal, 3:1 large)
+   - WCAG AAA pass/fail (7:1 normal, 4.5:1 large)
+2. Use /skill-a11y-audit + axe-core OR manually compute
+3. ANY failing combo MUST be fixed before deploy
+4. Phase 11.5 audit verifies the report exists and shows zero failures
+```
+
+#### 8H.15 — Brand Guidelines PDF Export
+
+```
+1. Compile brand-bible.md → branded PDF
+2. Use Pandoc with custom LaTeX template OR Gamma AI
+3. Sections (mirrors brand-bible.md):
+   - Cover page (logo + product name + version + date)
+   - Brand story (purpose, vision, mission, values)
+   - Logo (all variants + clear space + min size + don'ts)
+   - Color (palette + gradients + dark mode + contrast)
+   - Typography (fonts + scale + hierarchy)
+   - Voice & tone (do/don't examples + word bank)
+   - Imagery (illustration style + photography rules)
+   - Examples (real applications)
+4. Output:
+   [ ] /public/brand/brand-guidelines.pdf
+5. Link from /press page (8H.13)
+```
+
+#### 8H — Manifest
+
+After running 8H, write `/public/brand/assets-manifest.json` listing every
+asset produced. Phase 11.5 audit greps this manifest:
+
+```json
+{
+  "version": "1.0",
+  "generated_at": "ISO timestamp",
+  "logos": [...],
+  "favicons": [...],
+  "social": [...],
+  "marketing": [...],
+  "illustrations": [...],
+  "icons": [...],
+  "videos": [...],
+  "documents": [...]
+}
+```
+
 ### Deliverables
 
 ```
-/public/brand/               Logos + favicons + manifest
-/public/marketing/           OG + screenshots + demo video + social cards
-DESIGN.md                    Design system documentation
-SITE.md                      Screen + page roadmap
-Stitch project               All MVP screens, iterated
+/public/brand/
+  ├── logos: 5 SVGs + 4 lockup variants
+  ├── favicons: 7 files + manifest
+  ├── app-icons/ (iOS + Android + PWA)
+  ├── icons/ (UI + custom)
+  ├── illustrations/ (hero + 4 empty states + 3 errors + 3 onboarding)
+  ├── animations/ (Lottie + MP4)
+  ├── icon-system.md
+  ├── illustration-style.md
+  ├── contrast-report.md
+  ├── brand-guidelines.pdf
+  └── assets-manifest.json
+
+/public/marketing/
+  ├── og + social cards
+  ├── screenshots/ (desktop + mobile)
+  ├── mockups/ (laptop + iphone + browser frames)
+  ├── pricing/ (tier cards + badges)
+  ├── social/profiles/ (X + LinkedIn + IG + GitHub + YouTube)
+  ├── social/templates/ (3 post templates)
+  ├── newsletter-preview.html
+  ├── one-pager/
+  ├── pitch-deck/
+  └── demo-video.mp4
+
+/public/press/
+  ├── logo-pack.zip
+  ├── screenshots.zip
+  ├── boilerplate.md
+  ├── fact-sheet.md
+  └── contact.md
+
+src/app/(marketing)/press/page.tsx    — public download page
+DESIGN.md                              — design system documentation
+SITE.md                                — screen + page roadmap
+Stitch project                         — all MVP screens, iterated
 ```
 
-**Verify count**: Phase 11.5 audit MUST confirm all of the above files exist.
+**Verify count**: Phase 11.5 audit MUST grep `assets-manifest.json` and
+confirm every file listed actually exists on disk. Deploy is gated on it.
 
 ---
 
